@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript kontrollstrukturer og operatorer</title>
+</head>
+<body>
+    
+    <h1>del 1</h1>
+    <script>
+        function sjekkAlder1() {
+            const inputFelt = document.querySelector("#alder1");
+            const resultat = document.querySelector("#resultat1");
+            const alder = inputFelt.value;
+            // console.log(alder);  // test for å se om det virker
+            if (alder >= 18) {
+                resultat.innerHTML = "Du er myndig";
+                console.log("Du er myndig");
+            }
+            if (alder < 18) {
+                resultat.innerHTML = "Du er ikke myndig";
+                console.log("Du er ikke myndig");
+            }
+        }
+    </script>
+    <input type="text" id="alder1" placeholder="Oppgi din alder.">&nbsp;<button id="sjekk1" onclick="sjekkAlder1()">Sjekk alder</button>
+    <p id="resultat1"></p>
+
+    <h1>del 2</h1>
+    <script>
+        function sjekkTemp2() {
+            const inputFelt = document.querySelector("#temp2");
+            if (inputFelt.value >= 15) {
+                console.log("Det er varmt ute");
+            }
+            else {
+                console.log("Det er kaldt ute");
+            }
+        }
+    </script>
+    <input type="text" id="temp2" placeholder="Hvor mange grader er det?">&nbsp;<button onclick="sjekkTemp2()">Sjekk</button>
+
+    <h1>del 3</h1>
+    <script>
+        function sjekkKarakter3() {
+            const poeng = document.querySelector("#poeng3").value;
+            if (poeng > 90) {
+                console.log("Du fikk karakteren A :-D");
+            }
+            else if (poeng > 80) {
+                console.log("Du fikk karakteren B :-)");
+            }
+            else if (poeng > 70) {
+                console.log("Du fikk karakteren C :-)");
+            }
+            else if (poeng > 60) {
+                console.log("Du fikk karakteren D :-|");
+            }
+            else {
+                console.log("Du fikk karakteren F, ikke bestått :-(");
+            }
+        }
+    </script>
+    <input type="text" id="poeng3" placeholder="Hvor mange poeng?">&nbsp;
+    <button onclick="sjekkKarakter3()">Sjekk</button>
+
+    <h1>del 4</h1>
+    <script>
+        const alder4 = 17;
+        const grense4 = 18;
+        const poeng4 = "100";
+        const maksPoeng4 = 100;
+
+        console.log("== " + (alder4 == grense4));
+        console.log("!= " + (alder4 != grense4));
+
+        console.log("> " + (alder4 > grense4));
+        console.log("< " + (alder4 < grense4));
+
+        console.log(">= " + (alder4 >= grense4));
+        console.log("<= " + (alder4 <= grense4));
+
+        console.log("== " + (poeng4 == maksPoeng4));
+        console.log("=== " + (poeng4 === maksPoeng4));
+
+        if (alder4 = grense4) { // BLIR FEIL !! (alltid "true")
+
+        }
+    </script>
+    <p>se console</p>
+
+    <h1>del 5</h1>
+    <script>
+        function sjekkBillett5() {
+            const alder = document.querySelector("#alder5").value;
+            const billett = document.querySelector("#billett5").checked;
+            // console.log (alder + " og " + billett);  // tester
+
+            if (alder >= 16 && billett == true) {
+                console.log ("Du slipper inn");
+            }
+            else {
+                console.log ("Go home");
+            }
+        }
+    </script>
+    <input type="text" placeholder="Hva er din alder" id="alder5" /><br />
+    <input type="checkbox" id="billett5" />Har du billett (check)?<br ()>
+    <button onclick="sjekkBillett5()">Sjekk</button>
+
+</body>
+</html>

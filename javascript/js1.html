@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-eksempel</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        #boks {
+            width: 300px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: lightgray;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="overskrift">JavaScript-eksempel</h1>
+
+    <label for="navn">Navn:</label>
+    <input type="text" id="navn">
+
+    <!-- TRIGGER: onclick gjør at JavaScript kjøres -->
+    <button onclick="visHilsen()">Vis hilsen</button>
+
+    <button onclick="endreBoks()">Endre CSS</button>
+
+    <div id="boks">
+        Her kommer resultatet.
+    </div>
+
+
+    <!-- JavaScript er innebygd i HTML-dokumentet -->
+    <script>
+
+        // ============================================
+        // VARIABLER
+        // ============================================
+
+        // const brukes når variabelen ikke skal
+        // få tildelt en ny verdi.
+        const skole = "Levanger videregående skole";
+
+        // let brukes når verdien kan endres.
+        let antallKlikk = 0;
+
+
+        // ============================================
+        // VARIABELTYPER
+        // ============================================
+
+        let navn = "Ola";            // String - tekst
+        let alder = 17;              // Number - tall
+        let erElev = true;           // Boolean - true/false
+        let karakter = null;         // Null - ingen verdi
+        let adresse;                 // Undefined - ikke gitt verdi
+
+        console.log(navn);
+        console.log(alder);
+        console.log(erElev);
+
+        // typeof viser hvilken datatype noe har
+        console.log(typeof navn);    // string
+        console.log(typeof alder);   // number
+        console.log(typeof erElev);  // boolean
+
+
+        // ============================================
+        // DOM
+        // ============================================
+
+        // document er nettleserens representasjon
+        // av HTML-dokumentet.
+
+        // Vi finner HTML-elementer i DOM:
+        const overskrift = document.querySelector("#overskrift");
+        const input = document.querySelector("#navn");
+        const boks = document.querySelector("#boks");
+
+
+        // ============================================
+        // OBJEKTER OG EGENSKAPER
+        // ============================================
+
+        const elev = {
+            navn: "Kari",
+            alder: 17,
+            erElev: true
+        };
+
+        // navn og alder er EGENSKAPER til objektet elev
+
+        console.log(elev.navn);
+        console.log(elev.alder);
+
+        // Vi kan endre en egenskap selv om
+        // objektet er deklarert med const:
+        elev.alder = 18;
+
+
+        // ============================================
+        // OBJEKT MED METODE
+        // ============================================
+
+        const person = {
+            navn: "Per",
+            alder: 18,
+
+            // Dette er en METODE
+            presenter: function() {
+                console.log("Jeg heter " + this.navn);
+            }
+        };
+
+        // Kaller objektets metode
+        person.presenter();
+
+
+        // ============================================
+        // FUNKSJON MED PARAMETRE
+        // ============================================
+
+        function lagHilsen(navn, antall) {
+
+            let melding = "Hei " + navn +
+                          "! Du har trykket " +
+                          antall + " ganger.";
+
+            return melding;
+        }
+
+
+        // ============================================
+        // FUNKSJON SOM KJØRES AV EN TRIGGER
+        // ============================================
+
+        function visHilsen() {
+
+            // Øker variabelen med 1
+            antallKlikk++;
+
+            // Leser value-egenskapen fra input-elementet
+            const skrevetNavn = input.value;
+
+            // Sender to ARGUMENTER til funksjonen
+            const hilsen = lagHilsen(skrevetNavn, antallKlikk);
+
+            // Manipulerer DOM
+            boks.textContent = hilsen;
+
+            // Skriver informasjon til konsollen
+            console.log("Knappen ble trykket");
+            console.log("Navn:", skrevetNavn);
+            console.log("Antall klikk:", antallKlikk);
+        }
+
+
+        // ============================================
+        // MANIPULASJON AV CSS MED JAVASCRIPT
+        // ============================================
+
+        function endreBoks() {
+
+            // style er en egenskap på DOM-objektet
+            boks.style.backgroundColor = "lightblue";
+            boks.style.color = "darkblue";
+            boks.style.border = "4px solid darkblue";
+            boks.style.fontSize = "20px";
+
+            console.log("CSS ble endret");
+        }
+
+    </script>
+
+</body>
+</html>

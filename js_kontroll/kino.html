@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino-sjekk</title>
+    <script>
+        function sjekkKunde() {
+            const alder = document.querySelector("#alder").value;
+            const foresatt = document.querySelector("#foresatt").checked;
+            const resultat = document.querySelector("#resultat");
+
+            if (alder >= 15) resultat.innerHTML = "Du er gammel nok til å slipp inn.";
+            else if (alder >= 12 && foresatt == true) resultat.innerHTML = "Du slipper inn sammen med foresatt";
+            else resultat.innerHTML = "Sorry, du er for ung for denne filmen.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Kino-sjekk</h1>
+    <input type="text" placeholder="Hva er din alder?" id="alder" /><br />
+    <input type="checkbox" id="foresatt"/>Har du med foresatt?<br />
+    <button onclick="sjekkKunde()">Sjekk adgang</button>
+    <p id="resultat"></p>
+</body>
+</html>
