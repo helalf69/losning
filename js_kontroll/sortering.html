@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortering - oppgave 9.7</title>
+    <style>
+    :root {
+        --bakgrunn: #5C2751;
+        --tekst: #B8E0D2;
+        --aksent: #D4E157;
+    }
+
+    body, button, input, select {
+        background: var(--bakgrunn);
+        color: var(--tekst);
+    }
+
+    input::placeholder, select {
+        color: var(--tekst);
+    }
+
+    select {
+        border: 2px outset var(--tekst);
+    }
+    </style>        
+</head>
+<body>
+    <h1>Sortering</h1>
+    <p id="org">Original:<br /></p>
+    <p id="res">Resultat:<br /></p>
+
+    <script>
+        let tall = [8, 3, 12, 1, 5];
+
+        const org = document.querySelector("#org");
+        org.innerHTML += tall;
+
+        const res = document.querySelector("#res");
+
+        for (i = 0; i < tall.length; i++) {
+            for(j = i+1; j < tall.length; j++) {
+                if (tall[j] < tall[i]) {
+                    const temp = tall[i];
+                    tall[i] = tall[j];
+                    tall[j] = temp;
+                }
+                res.innerHTML += tall + " :: ";
+            }
+            res.innerHTML += "<br />"
+        }
+    </script>
+</body>
+</html>
