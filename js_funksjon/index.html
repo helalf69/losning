@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript funksjoner</title>
+    <style>
+        body {
+            background-color: silver;
+            color: darkolivegreen;
+        }
+        p {
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funksjoner i JavaScript</h1>
+
+    <h2>1. Din første funksjon</h2>
+    <script>
+        function siHei1() {
+            console.log("Hei verden!");
+        }
+        siHei1();
+    </script>
+    <p>Se console</p>
+
+    <h2>2. Kjør funksjonen</h2>
+    <script>
+        for (i=0; i<3; i++) {
+            siHei1();
+        }
+    </script>
+    <p>Se console</p>
+
+    <h2>3. Funksjon med parameter</h2>
+    <script>
+        function siHei3(name) { // verdien får sin egen variabel som fungerer bare i funksjonen
+            console.log("Hei " + name);
+        }
+        let navn3 = "Ola";
+        siHei3(navn3);
+    </script>
+    <p>Se console</p>
+
+    <h2>4. Flere parametre</h2>
+    <script>
+        function presenter4(navn, alder) {
+            console.log(navn + ", " + alder + " år.");
+        }
+        let navn4 = "Karen";
+        let alder4 = 3;
+        presenter4(navn4, alder4);
+    </script>
+    <p>Se console</p>
+
+    <h2>5. Returner tekst</h2>
+    <script>
+        function lagHilsen5(navn) {
+            return "Hei " + navn + "!"; // sender dette tilbake til der funksjonen ble kalt.
+        }
+
+        let navn5 = "Per";
+        let melding5 = lagHilsen5(navn5);
+        console.log(melding5);
+    </script>
+    <p>Se console</p>
+
+    <h2>6. Gjør teksten «større»</h2>
+    <script>
+        function rop6(tekst) {
+            return tekst.toUpperCase(); // metode / method
+        }
+
+        let tekst6 = "hei";
+        let melding6 = rop6(tekst6);
+        console.log(melding6);
+    </script>
+    <p>Se console</p>
+
+    <h2>7. Gjør teksten «mindre»</h2>
+    <script>
+        function hvisk7(tekst) {
+            return tekst.toLowerCase(); // metode / method
+        }
+
+        let tekst7 = "HEI";
+        let melding7 = hvisk7(tekst7);
+        console.log(melding7);
+    </script>
+    <p>Se console</p>
+    
+    <h2>8. Tell antall tegn</h2>
+    <script>
+        function tellTegn8(tekst) {
+            console.log (tekst.length); // atributt / attribute
+        }
+
+        let tekst8 = "Javascript";
+        tellTegn8(tekst8);
+    </script>
+    <p>Se console</p>
+
+    <h2>9. Finn første bokstav</h2>
+    <script>
+        function forsteBokstav9(tekst) {
+            console.log(tekst[0]); // starter telling på 0
+        }
+
+        let tekst9 = "Programmering";
+        forsteBokstav9(tekst9);
+    </script>
+    <p>Se console</p>
+
+</body>
+</html>
