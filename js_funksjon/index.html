@@ -110,11 +110,23 @@
     <h2>9. Finn første bokstav</h2>
     <script>
         function forsteBokstav9(tekst) {
-            console.log(tekst[0]); // starter telling på 0
+            console.log(tekst[0]); // tekst-streng = array, starter telling på 0
         }
 
         let tekst9 = "Programmering";
         forsteBokstav9(tekst9);
+    </script>
+    <p>Se console</p>
+
+    <h2>10. Lag brukernavn</h2>
+    <script>
+        function lagBrukernavn10(fornavn, etternavn) {
+            return fornavn.toLowerCase() + "." + etternavn.toLowerCase();
+        }
+
+        let fornavn10 = "Lisa";
+        let etternavn10 = "Presley";
+        console.log(lagBrukernavn10(fornavn10, etternavn10));
     </script>
     <p>Se console</p>
 
