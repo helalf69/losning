@@ -130,5 +130,48 @@
     </script>
     <p>Se console</p>
 
+    <h2>11. Template literals</h2>  // ferdig formulering av tekst
+    <script>
+        function elevInfo11(navn, klasse) {
+            console.log(`${navn} går i klasse ${klasse}`);
+            console.log(navn + " går i klasse " + klasse);
+        }
+
+        let navn11 = "Danylo";
+        let klasse11 = "2ITA";
+        elevInfo11(navn11, klasse11);
+    </script>
+    <p>Se console</p>
+
+    <h2>12. Funksjon koblet til HTML</h2>
+    <script>
+        function siHei12() {
+            const navn = document.querySelector("#navnInput12");
+            const resultat = document.querySelector("#resultat12");
+
+            resultat.innerHTML = "Hei " + navn.value + "!";
+        }
+
+    </script>
+
+        <input type="text" id="navnInput12" placeholder="Skriv navnet ditt">
+        <button onClick="siHei12()">Si hei</button>
+
+        <div id="resultat12"></div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
