@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grunnleggende JavaScript</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            color: rebeccapurple;
+        }
+        h1, h2, p {
+            margin: 2px 0px;
+            border: solid 1px rebeccapurple;
+            border-radius: 4px;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prøve i Grunnleggende JavaScript</h1>
+    <h2>Del 1 – Flervalg (10 poeng)</h2>
+    <pre>
+Kryss av riktig svar.
+Oppgave 1
+let navn = "Ola";
+Hva er "Ola"?
+☐	Operator
+X	Tekststreng
+☐	Funksjon
+☐	Tall
+
+Oppgave 2
+console.log(10 % 4);
+Hva skrives ut?
+X	2
+☐	4
+☐	6
+☐	10
+
+Oppgave 3
+let alder = 17;
+
+if(alder >= 16){
+    console.log("Godkjent");
+}
+Hva skjer?
+X	Godkjent skrives ut
+☐	Ingenting skjer
+☐	Programmet krasjer
+☐	alder blir 16
+
+
+ Oppgave 4
+Hva betyr operatoren &&?
+☐	Eller
+☐	Ikke
+X	Og
+☐	Lik
+
+Oppgave 5
+Hva er en parameter?
+☐	En type operator
+X	Verdi som sendes inn i en funksjon
+☐	En variabel som alltid lagrer tall
+☐	En type if-setning
+
+    </pre>
+
+    <script>
+console.log(10 % 4);
+
+let alder = 17;
+
+if(alder >= 16){
+    console.log("Godkjent");
+}
+
+// ***** Del 2 ****
+// Oppgave 6
+let x = 5;
+console.log(x + 3);
+
+//Oppgave 7
+let navn7 = "Kari";
+console.log("Hei " + navn7);
+
+// Oppgave 8
+console.log(8 > 12);
+
+//Oppgave 9
+function dobbel(tall){
+    return tall * 2;
+}
+console.log(dobbel(5));
+
+//Oppgave 10
+console.log("Hei".length);
+
+
+// ***** Del 3 ****
+//let navn = Ola
+let navn = "Ola";
+
+function hei(navn){
+//    console.log("Hei" navn)
+    console.log("Hei " + navn);
+}
+
+// if(navn = "Ola"){
+if(navn == "Ola"){
+    hei(navn)
+}
+
+//console.log(navnn)
+console.log(navn);
+
+// ***** Del 4 ****
+let alder11 = 18;
+
+if(alder11 >= 18){ // >=
+    console.log("Voksen");
+}
+
+function siHei(navn){ // navn
+    console.log("Hei " + navn);
+}
+
+
+function dobbel(tall){
+    return tall * 2; // tall * 2;
+}
+
+// En funksjon brukes til å gi oss mulighet til å gjenbruke kode og å sende data og få den prossesert.
+
+
+// ************* Del 6 ************
+function test18(tekst){
+    return tekst.length > 5;
+}
+console.log(test18("Hei"));
+
+console.log(test18("Programmering"));
+
+// **************** Del 7 ***********
+function sjekk(alder){
+    if(alder >= 18){
+        return "Voksen";
+    }
+    return "Barn";
+}
+
+console.log(sjekk(15));
+console.log(sjekk(18));
+
+    </script>
+
+</body>
+</html>
