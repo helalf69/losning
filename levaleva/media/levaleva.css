@@ -79,6 +79,89 @@ body > footer {
     min-height: 100svh;
 }
 
+.trimtur-tabell {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.trimtur-tabell :is(th, td) {
+    height: 2.75rem;
+    padding: 0.25rem;
+    border: 1px solid color-mix(in srgb, var(--aksent) 45%, var(--bakgrunn));
+    overflow-wrap: anywhere;
+}
+
+.trimtur-tabell thead th,
+.trimtur-tabell .turdag {
+    background: var(--aksent);
+    color: var(--bakgrunn);
+    font-size: clamp(0.75rem, 3vw, 1rem);
+}
+
+.trimtur-tabell .turdag {
+    padding: 0;
+}
+
+.turdag button {
+    display: block;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.turdag button:focus-visible {
+    outline-color: var(--bakgrunn);
+    outline-offset: -3px;
+}
+
+.turdato {
+    display: block;
+}
+
+.turvindu {
+    isolation: isolate;
+    width: min(28rem, calc(100% - 2rem));
+    padding: clamp(1rem, 5vw, 2rem);
+    overflow: auto;
+    border: 1px solid var(--aksent);
+    border-radius: 1rem;
+    background: var(--bakgrunn);
+    color: var(--tekst);
+}
+
+.turvindu::before {
+    position: absolute;
+    z-index: -1;
+    inset: 1rem;
+    background: url("levaleva.png") center / contain no-repeat;
+    filter: blur(5px);
+    opacity: 0.12;
+    content: "";
+}
+
+.turvindu::backdrop {
+    background: color-mix(in srgb, var(--tekst) 65%, transparent);
+}
+
+.turvindu-knapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.turvindu-knapper form {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
 h1, h2, h3 {
     margin-block: 0 0.6em;
     font-family: Georgia, serif;

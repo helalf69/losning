@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trimtur | LevaLeva</title>
-    <link rel="stylesheet" href="media/levaleva.css">
+    <link rel="stylesheet" href="media/levaleva.css?v=2">
+    <script src="js/kalender.js" defer></script>
 </head>
 <body>
     <header class="sidehode">
@@ -17,6 +18,60 @@
     </nav>
     <main class="forside">
         <h1>Trimtur</h1>
+        <table class="trimtur-tabell">
+            <thead>
+                <tr>
+                    <th scope="col">Ukenr.</th>
+                    <th scope="col">Mandag</th>
+                    <th scope="col">Tirsdag</th>
+                    <th scope="col">Onsdag</th>
+                    <th scope="col">Torsdag</th>
+                    <th scope="col">Fredag</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td class="turdag">
+                        <button type="button" id="vis-tur" aria-haspopup="dialog">
+                            <span class="turdato"></span>
+                            Turdag
+                        </button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <dialog class="turvindu" id="turvindu" aria-labelledby="tur-tittel">
+            <h2 id="tur-tittel">Tur til Storbrua</h2>
+            <p>Tidspunkt: 12:30–14:30</p>
+            <p role="status"><span id="antall-pameldte">8</span> stk påmeldt</p>
+            <div class="turvindu-knapper">
+                <button type="button" id="meld-pa">Meld på</button>
+                <form method="dialog">
+                    <button autofocus>Lukk</button>
+                </form>
+            </div>
+        </dialog>
     </main>
 </body>
 </html>
