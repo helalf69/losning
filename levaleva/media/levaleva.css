@@ -1,0 +1,237 @@
+:root {
+    --bakgrunn: #f5fafc;
+    --tekst: #142f43;
+    --aksent: #155784;
+
+    color-scheme: light;
+    font-family: system-ui, sans-serif;
+    line-height: 1.55;
+    color: var(--tekst);
+    background: var(--bakgrunn);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body > header,
+main,
+body > footer {
+    width: min(100% - 2rem, 70rem);
+    margin-inline: auto;
+    padding-block: clamp(1rem, 4vw, 2.5rem);
+}
+
+.sidehode {
+    display: grid;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    place-items: center;
+    height: 50vh;
+    height: 50svh;
+    padding-block: 0.75rem;
+}
+
+.sidehode img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+}
+
+.hovedmeny {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--aksent) 25%, var(--bakgrunn));
+    background: var(--bakgrunn);
+}
+
+.hovedmeny a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--aksent);
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hovedmeny a:hover,
+.hovedmeny a[aria-current="page"] {
+    background: var(--aksent);
+    color: var(--bakgrunn);
+}
+
+.forside {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+h1, h2, h3 {
+    margin-block: 0 0.6em;
+    font-family: Georgia, serif;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+a {
+    color: var(--aksent);
+    text-underline-offset: 0.2em;
+}
+
+form,
+.kalender {
+    padding: clamp(0.75rem, 3vw, 1.75rem);
+    border: 1px solid color-mix(in srgb, var(--aksent) 25%, var(--bakgrunn));
+    border-radius: 1rem;
+    background: color-mix(in srgb, white 75%, var(--bakgrunn));
+}
+
+form,
+.skjemafelt {
+    display: grid;
+    gap: 0.75rem;
+}
+
+form {
+    gap: 1.25rem;
+}
+
+.skjemafelt {
+    gap: 0.35rem;
+}
+
+fieldset {
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--aksent) 55%, var(--bakgrunn));
+    border-radius: 0.5rem;
+}
+
+label,
+legend {
+    font-weight: 650;
+}
+
+:where(input, select, textarea, button) {
+    font: inherit;
+    color: inherit;
+}
+
+:where(input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="submit"], [type="button"], [type="reset"], [type="image"]), select, textarea) {
+    width: 100%;
+    min-width: 0;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--aksent) 70%, var(--bakgrunn));
+    border-radius: 0.5rem;
+    background: var(--bakgrunn);
+}
+
+textarea {
+    min-height: 7rem;
+    resize: vertical;
+}
+
+input {
+    accent-color: var(--aksent);
+}
+
+:where(button, input:is([type="submit"], [type="button"], [type="reset"])) {
+    width: fit-content;
+    min-height: 2.75rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--aksent);
+    border-radius: 0.5rem;
+    background: var(--aksent);
+    color: var(--bakgrunn);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+:where(button, input[type="submit"]):enabled:hover {
+    background: var(--tekst);
+    color: var(--bakgrunn);
+}
+
+:focus-visible {
+    outline: 2px solid var(--aksent);
+    outline-offset: 2px;
+}
+
+:where(input, select, textarea):is([aria-invalid="true"], :user-invalid) {
+    border: 2px dashed var(--tekst);
+}
+
+.feltfeil {
+    margin: 0;
+    font-weight: 700;
+}
+
+:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.kalender {
+    max-width: 34rem;
+}
+
+.kalender-topp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+}
+
+.kalender-topp h2 {
+    margin: 0;
+}
+
+/* Legg ukedagene først, deretter datoene i samme rekkefølge. */
+.kalender-rutenett {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: clamp(0.125rem, 1vw, 0.5rem);
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.kalender-dag {
+    width: 100%;
+    padding-inline: 0;
+    background: var(--bakgrunn);
+    color: var(--tekst);
+}
+
+.kalender-dag[aria-current="date"] {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.kalender-dag[aria-pressed="true"] {
+    background: var(--aksent);
+    color: var(--bakgrunn);
+}
+
+.kalender-dag:disabled {
+    text-decoration: line-through;
+}
